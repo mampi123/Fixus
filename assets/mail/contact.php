@@ -31,7 +31,7 @@ if ($name == '') {
 }
 
 // Configuración: Dirección de correo donde se enviarán los emails.
-$address = "mampelmartina@gmail.com";
+$address = "mampelmartina@hotmail.com";
 
 // Configuración: Asunto del correo.
 $e_subject = 'Fixus Consulta';
