@@ -6836,7 +6836,7 @@ footer.centered .copyright {
 @media (max-width: 992px) {
   .whatsapp-container {
     position: fixed !important;
-    top: 30px !important; /* Sube el botón más arriba */
+    top: 15px !important; /* Sube el botón más arriba */
     right: 20px !important; /* Mantiene la distancia del borde derecho */
     z-index: 1000 !important;
   }
