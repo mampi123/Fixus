@@ -50,7 +50,7 @@ $address = "mampelmartina@gmail.com";
 
 // Example, $e_subject = '$name . ' has contacted you via Your Website.';
 
-$e_subject = 'Contact Form';
+$e_subject = 'Fixus Consulta';
 
 
 // Configuration option.
