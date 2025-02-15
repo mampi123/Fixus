@@ -6859,7 +6859,7 @@ footer.centered .copyright {
   /* Ajuste adicional para pantallas muy pequeñas */
   @media (max-width: 480px) {
     .whatsapp-container {
-      top: 25px !important; /* Aún más arriba en pantallas pequeñas */
+      top: 15px !important; /* Aún más arriba en pantallas pequeñas */
       right: 5px !important;
     }
   }
