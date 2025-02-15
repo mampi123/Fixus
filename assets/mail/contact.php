@@ -34,10 +34,6 @@ if ($name == '') {
     exit();
 }
 
-if (get_magic_quotes_gpc()) {
-    $comments = stripslashes($comments);
-}
-
 // Configuración: Dirección de correo donde se enviarán los emails.
 $address = "mampelmartina@gmail.com";
 
