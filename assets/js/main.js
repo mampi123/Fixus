@@ -679,3 +679,29 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
         
+
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const faqQuestions = document.querySelectorAll(".faq-question")
+          
+            faqQuestions.forEach((question) => {
+              question.addEventListener("click", () => {
+                const answer = question.nextElementSibling
+                const isActive = question.classList.contains("active")
+          
+                // Cerrar todas las respuestas abiertas
+                faqQuestions.forEach((q) => {
+                  q.classList.remove("active")
+                  q.nextElementSibling.classList.remove("active")
+                })
+          
+                // Abrir o cerrar la respuesta actual
+                if (!isActive) {
+                  question.classList.add("active")
+                  answer.classList.add("active")
+                }
+              })
+            })
+          })
+          
+          
