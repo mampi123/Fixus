@@ -609,81 +609,35 @@
                 </div>
                 <!-- End  Address -->
 
-                <!-- Start Contact Form -->
-                <div class="col-md-6 contact-form">
-                    <div class="content">
-                        <div class="heading">
-                            <h3>Hablemos sobre tu Negocio</h3>
+ <!-- Nueva Sección de Contacto con Diseño Mejorado -->
+<div id="contact" class="contact-area default-padding bg-gray">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Texto y Descripción -->
+            <div class="col-md-6 text-left">
+                <h2 class="font-weight-bold">Agendá hoy una asesoría gratuita!</h2>
+                <p>Dejanos tu número de WhatsApp o correo electrónico y en breve un asesor de Fixus se comunicará contigo para resolver todas tus inquietudes.</p>
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-check-circle text-primary"></i> Primera asesoría gratuita para orientarte en tu proyecto.</li>
+                    <li><i class="fa fa-check-circle text-primary"></i> Elegí la modalidad: llamada, videoconferencia o contacto por WhatsApp.</li>
+                </ul>
+            </div>
+            
+            <!-- Formulario de Contacto -->
+            <div class="col-md-6">
+                <div class="contact-form bg-white p-4 shadow rounded">
+                    <form action="assets/mail/contact.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="contacto" placeholder="Ingresá tu WhatsApp o email" required>
                         </div>
-                        <form action="assets/mail/contact.php" method="POST" class="contact-form">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <input class="form-control" id="name" name="Nombre" placeholder="Nombre*" type="text" required>
-                                        <span class="alert-error"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <input class="form-control" id="email" name="email" placeholder="Email*" type="email" required>
-                                        <span class="alert-error"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <input class="form-control" id="phone" name="phone" placeholder="Telefono*" type="text" required>
-                                        <span class="alert-error"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="form-group comments">
-                                        <textarea class="form-control" id="comments" name="comments" placeholder="Háblanos sobre tu proyecto*" required></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <button type="submit" name="submit" id="submit" class="submit-btn">
-                                       Enviar Mensaje <i class="fa fa-paper-plane"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- Alert Message -->
-                            <div class="col-md-12 alert-notification">
-                                <div id="message" class="alert-msg"></div>
-                            </div>
-                        </form>
-                    </div>
+                        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                    </form>
                 </div>
-                <!-- End Contact Form -->
             </div>
         </div>
     </div>
-    <!-- End Contact -->
-
-    <style>
-        .contact-icon {
-            transition: opacity 0.3s ease-in-out;
-        }
-        .contact-icon:hover {
-            opacity: 0.6;
-        }
-
-        .submit-btn {
-            transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        }
-        .submit-btn:hover {
-            background-color: #4f6cbf !important;
-            opacity: 0.8;
-        }
-    </style>
- <!-- End Contact -->
+</div>
+<!-- End Contact -->
 
 
     <!-- Start Maps 

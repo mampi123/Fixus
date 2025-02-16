@@ -6871,3 +6871,21 @@ footer.centered .copyright {
   transform: translateY(-2px) !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 }
+
+.contact-area {
+  padding: 60px 0;
+}
+.contact-form {
+  border-radius: 8px;
+}
+.btn-primary {
+  background-color: #617eca !important;
+  border-color: #617eca;
+}
+.btn-primary:hover {
+  background-color: #4f6cbf !important;
+  border-color: #4f6cbf;
+}
+.fa-check-circle {
+  margin-right: 10px;
+}
