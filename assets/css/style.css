@@ -78,11 +78,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1,h2,h3,h4 {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 h5,h5 {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 img {
@@ -7015,7 +7015,6 @@ footer.centered .copyright {
     @media (max-width: 768px) {
       h1 {
         font-size: 14px;
-        padding: 0 20px;
       }
     
       .faq-grid {
@@ -7319,7 +7318,7 @@ footer.centered .copyright {
 .member-card-back {
   background: #617ECA;
   transform: rotateY(180deg);
-  padding: 70px;
+  padding: px;
   color: white;
   box-sizing: border-box;
 }
