@@ -704,4 +704,17 @@ document.addEventListener("DOMContentLoaded", function () {
             })
           })
           
-          
+          document.querySelectorAll('.flip-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const card = e.target.closest('.member-card');
+                card.classList.add('flipped');
+            });
+        });
+
+        document.querySelectorAll('.flip-button-back').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const card = e.target.closest('.member-card');
+                card.classList.remove('flipped');
+            });
+        });
+ 
