@@ -294,7 +294,7 @@
                                     <span class="large">+</span>
                                     <span class="timer" data-to="100000" data-speed="4000">100000</span>
                                 </div>
-                                <span class="medium">Millones Liquidados</span>
+                                <span class="medium">Millones Avalados</span>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 item">
@@ -314,7 +314,7 @@
                                     <span class="large">+</span>
                                     <span class="timer" data-to="10" data-speed="4000">10</span>
                                 </div>
-                                <span class="medium">Provincias en Argentina</span>
+                                <span class="medium">Provincias</span>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 item">
@@ -322,7 +322,7 @@
                                 <i class="fa-solid fa-trophy"></i>
                                 <div class="stat-number">
                                     <span class="large">+</span>
-                                    <span class="timer" data-to="25" data-speed="4000">25</span>
+                                    <span class="timer" data-to="15" data-speed="4000">25</span>
                                 </div>
                                 <span class="medium">Años de Experiencia</span>
                             </div>
@@ -506,6 +506,60 @@
     </div>
     <!-- End Services -->
 
+     <!-- Sección de Clientes -->
+     <div id="clientes" class="clientes-area default-padding" style="background: white;">
+        <div class="container">
+            <div class="row">
+                <div class="site-heading text-center">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h2>NUESTROS <span>CLIENTES</span></h2>
+                        <p>Algunas de las empresas que han confiado en nosotros.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="clientes-carousel owl-carousel owl-theme">
+                        <div class="item">
+                            <img src="assets/img/logo1.png" alt="Cliente 1">
+                        </div>
+                        <div class="item">
+                            <img src="assets/img/logo2.png" alt="Cliente 2">
+                        </div>
+                        <div class="item">
+                            <img src="assets/img/logo3.png" alt="Cliente 3">
+                        </div>
+                        <div class="item">
+                            <img src="assets/img/logo4.png" alt="Cliente 4">
+                        </div>
+                        <div class="item">
+                            <img src="assets/img/logo5.png" alt="Cliente 5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de inicialización para Owl Carousel -->
+    <script>
+        $(document).ready(function () {
+            $(".clientes-carousel").owlCarousel({
+                loop: true,             // Hace que el carrusel sea infinito
+                margin: 30,             // Espaciado entre los logos
+                autoplay: true,         // Activa el autoplay
+                autoplayTimeout: 3000,  // Tiempo entre cambios de logo (3s)
+                autoplayHoverPause: true, // Pausa al pasar el mouse
+                nav: true,              // Agrega las flechas de navegación
+                navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+                responsive: {
+                    0: { items: 2 },    // Muestra 2 logos en móviles
+                    600: { items: 3 },  // Muestra 3 logos en tablets
+                    1000: { items: 5 }  // Muestra 5 logos en pantallas grandes
+                }
+            });
+        });
+    </script>
 
     <!-- Start Team Members
     ============================================= -->
@@ -684,6 +738,61 @@ style="background-image: url(assets/img/7.jpg);">
             </div>
         </div>
     </div>
+
+        <!-- Sección de Clientes -->
+        <div id="clientes" class="clientes-area default-padding" style="background: white;">
+            <div class="container">
+                <div class="row">
+                    <div class="site-heading text-center">
+                        <div class="col-md-8 col-md-offset-2">
+                            <h2>NUESTROS <span>Partners</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="clientes-carousel owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="assets/img/logo1.png" alt="Cliente 1">
+                            </div>
+                            <div class="item">
+                                <img src="assets/img/logo2.png" alt="Cliente 2">
+                            </div>
+                            <div class="item">
+                                <img src="assets/img/logo3.png" alt="Cliente 3">
+                            </div>
+                            <div class="item">
+                                <img src="assets/img/logo4.png" alt="Cliente 4">
+                            </div>
+                            <div class="item">
+                                <img src="assets/img/logo5.png" alt="Cliente 5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Script de inicialización para Owl Carousel -->
+        <script>
+            $(document).ready(function () {
+                $(".clientes-carousel").owlCarousel({
+                    loop: true,             // Hace que el carrusel sea infinito
+                    margin: 30,             // Espaciado entre los logos
+                    autoplay: true,         // Activa el autoplay
+                    autoplayTimeout: 3000,  // Tiempo entre cambios de logo (3s)
+                    autoplayHoverPause: true, // Pausa al pasar el mouse
+                    nav: true,              // Agrega las flechas de navegación
+                    navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+                    responsive: {
+                        0: { items: 2 },    // Muestra 2 logos en móviles
+                        600: { items: 3 },  // Muestra 3 logos en tablets
+                        1000: { items: 5 }  // Muestra 5 logos en pantallas grandes
+                    }
+                });
+            });
+        </script>
+    
 
     <!-- Start Maps 
     ============================================= -->
