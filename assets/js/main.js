@@ -718,3 +718,41 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
  
+        document.addEventListener("DOMContentLoaded", function () {
+            const serviceCards = document.querySelectorAll(".service-card");
+        
+            serviceCards.forEach((card) => {
+                const flipButton = card.querySelector(".flip-button");
+                const flipBackButton = card.querySelector(".flip-button-back");
+        
+                flipButton.addEventListener("click", () => {
+                    card.classList.add("flipped");
+                });
+        
+                flipBackButton.addEventListener("click", () => {
+                    card.classList.remove("flipped");
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const faqItems = document.querySelectorAll(".faq-item");
+        
+            faqItems.forEach((item) => {
+                const question = item.querySelector(".faq-question");
+        
+                question.addEventListener("click", () => {
+                    // Cierra todas las preguntas antes de abrir la actual
+                    faqItems.forEach((faq) => {
+                        if (faq !== item) {
+                            faq.classList.remove("active");
+                        }
+                    });
+        
+                    // Alternar la clase "active" en la pregunta seleccionada
+                    item.classList.toggle("active");
+                });
+            });
+        });
+        
+        

@@ -841,7 +841,7 @@ nav.navbar.bootsnav.sticked .attr-nav.social li {
 }
 
 .site-heading {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   overflow: hidden;
   margin-top: -5px;
 }
@@ -6943,9 +6943,11 @@ footer.centered .copyright {
     .faq-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
+      gap: 20px;
+      max-width: 1000px;
       margin: 0 auto;
-    }
+      align-items: stretch; /* Hace que los cuadros tengan la misma altura */
+  }
     
     .faq-item {
       background: white;
@@ -6982,7 +6984,7 @@ footer.centered .copyright {
     }
     
     .faq-question i {
-      color: #00bcd4;
+      color: #617ECA;
       font-size: 14px;
       transition: transform 0.3s ease;
     }
@@ -7012,7 +7014,7 @@ footer.centered .copyright {
     
     @media (max-width: 768px) {
       h1 {
-        font-size: 28px;
+        font-size: 14px;
         padding: 0 20px;
       }
     
@@ -7057,11 +7059,14 @@ footer.centered .copyright {
 }
 
 .member-card-back-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
 }
 
 .flip-button-back {
@@ -7136,26 +7141,14 @@ footer.centered .copyright {
   transform: rotateY(180deg);
 }
 
-.member-card-front,
-.member-card-back {
-  position: absolute;
-  width: 100%;
-  height: 80%;
-  backface-visibility: hidden;
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 
 
 .member-image-container {
   position: relative;
   width: 100%;
   height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra completamente */
+  border-radius: 20px; /* Igual que el contenedor */
 }
 
 .member-image {
@@ -7177,7 +7170,7 @@ footer.centered .copyright {
 .member-card-back {
   background: #617ECA;
   transform: rotateY(180deg);
-  padding: 20px;
+  padding: 68px;
   color: white;
   box-sizing: border-box;
 }
@@ -7313,7 +7306,7 @@ footer.centered .copyright {
 .member-card-back {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 90%;
   backface-visibility: hidden;
   border-radius: 20px;
   overflow: hidden;
@@ -7326,7 +7319,7 @@ footer.centered .copyright {
 .member-card-back {
   background: #617ECA;
   transform: rotateY(180deg);
-  padding: 20px;
+  padding: 85px;
   color: white;
   box-sizing: border-box;
 }
@@ -7413,3 +7406,580 @@ footer.centered .copyright {
   object-fit: cover; /* Ensures the image scales well */
   border-radius: 20px; /* Matches the container's rounding */
 }
+
+/* Contenedor de servicios */
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Tarjeta de servicio */
+.service-card {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  position: relative;
+  perspective: 1000px;
+}
+
+/* Estructura interna de la tarjeta */
+.service-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+/* Voltear la tarjeta */
+.service-card.flipped .service-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Frente y dorso */
+.service-card-front,
+.service-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Frente */
+.service-card-front {
+  background: white;
+  color: #333;
+}
+
+/* Iconos de servicios */
+.service-card-front i {
+  font-size: 50px;
+  color: #617ECA;
+  margin-bottom: 15px;
+}
+
+/* Texto de la tarjeta frontal */
+.service-card-front h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service-card-front p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Botón para voltear */
+.flip-button,
+.flip-button-back {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #617ECA;
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Posición de los botones */
+.flip-button {
+  bottom: 10px;
+  right: 10px;
+}
+
+.flip-button-back {
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+}
+
+/* Efecto hover */
+.flip-button:hover,
+.flip-button-back:hover {
+  transform: scale(1.1);
+  background: #f0f0f0;
+}
+
+/* Parte trasera */
+.service-card-back {
+  background: #617ECA;
+  color: white;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+}
+
+/* Texto en la parte trasera */
+.service-card-back p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-card {
+      max-width: 300px;
+  }
+}
+
+/* Botón "+" mejorado */
+.flip-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  background: #617ECA; /* Color principal */
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto hover para hacer el botón más interactivo */
+.flip-button:hover {
+  background: #4A69B2; /* Color más oscuro */
+  transform: scale(1.1);
+}
+
+/* Pequeño efecto al hacer clic */
+.flip-button:active {
+  transform: scale(0.95);
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+  .flip-button {
+      width: 40px;
+      height: 40px;
+      font-size: 22px;
+  }
+}
+
+/* Lista de servicios en la parte trasera */
+.service-list {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: white;
+}
+
+/* Ajustar espaciado entre elementos */
+.service-list li {
+  padding: 5px 0;
+}
+
+/* Mantiene alineación en móviles */
+@media (max-width: 768px) {
+  .service-list {
+      font-size: 14px;
+  }
+}
+/* Mejorar la visibilidad de la parte trasera de la tarjeta */
+.service-card-back {
+  background: #162937; /* Azul más oscuro para mayor contraste */
+  color: white;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Suavizar la transición */
+}
+
+/* Mostrar la tarjeta cuando se voltea */
+.service-card.flipped .service-card-back {
+  opacity: 1;
+}
+
+/* Mejorar la lista para mayor visibilidad */
+.service-list {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  line-height: 2;
+  color: white;
+  font-weight: 300;
+  max-width: 90%;
+}
+
+/* Destacar los números en negrita */
+.service-list li {
+  padding: 5px 0;
+  font-weight: 400;
+}
+
+.service-list li::before {
+  content: attr(data-number) " ";
+  font-weight: 700; /* Números en negrita */
+  color: white;
+  margin-right: 5px;
+}
+
+/* Mejorar el botón de cierre */
+.flip-button-back {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #162937;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto hover en botón */
+.flip-button-back:hover {
+  background: #f0f0f0;
+  transform: scale(1.1);
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+  .service-list {
+      font-size: 16px;
+  }
+
+  .flip-button-back {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+  }
+}
+
+/* Reducir espacio debajo del título */
+.site-heading {
+  margin-bottom: 30px; /* Antes era 60px, lo reducimos */
+}
+
+/* Ajustar tamaño de la línea debajo del título (si hay una) */
+.site-heading::after {
+  margin-top: 10px; /* Antes era mayor */
+}
+
+/* Reducir el espacio superior de toda la sección de servicios */
+.services-area {
+  padding-top: 40px; /* Antes era 80px, lo reducimos */
+}
+
+/* Ajustar el grid de los servicios */
+.service-grid {
+  margin-top: 0; /* Evita espacio innecesario */
+}
+
+/* Estilos generales del contenedor */
+.faq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Estilo para cada pregunta */
+.faq-item {
+  background: #F8F9FA; /* Color de fondo claro */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del botón de la pregunta */
+.faq-question {
+  width: 100%;
+  background: #617ECA; /* Azul destacado */
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+
+/* Icono "+" */
+.faq-question i {
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotación del icono cuando se expande */
+.faq-item.active .faq-question i {
+  transform: rotate(45deg);
+}
+
+/* Resaltar la pregunta cuando está activa */
+.faq-item.active .faq-question {
+  background: #4A69B2;
+}
+
+/* Contenedor de la respuesta */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  background: white;
+  padding: 0 20px;
+}
+
+/* Mostrar respuesta cuando está activa */
+.faq-item.active .faq-answer {
+  max-height: 500px; /* Ajusta según el contenido */
+  padding: 15px 20px;
+}
+
+/* Estilo del texto de la respuesta */
+.faq-answer p, .faq-answer ul, .faq-answer ol {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Listas dentro de la respuesta */
+.faq-answer ul, .faq-answer ol {
+  padding-left: 20px;
+}
+
+/* Negrita en listas */
+.faq-answer strong {
+  color: #4A69B2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-question {
+      font-size: 16px;
+  }
+  .faq-answer p {
+      font-size: 14px;
+  }
+}
+
+/* Contenedor principal */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas grandes */
+  gap: 20px; /* Espaciado entre preguntas */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Asegurar que en móviles sea una sola columna */
+@media (max-width: 768px) {
+  .faq-grid {
+      grid-template-columns: 1fr; /* Solo una columna */
+  }
+}
+
+/* Estilo para cada pregunta */
+.faq-item {
+  background: #617ECA; /* Color azul */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del botón de la pregunta */
+.faq-question {
+  width: 100%;
+  background: #617ECA; /* Azul destacado */
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+
+/* Icono "+" */
+.faq-question i {
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotación del icono cuando se expande */
+.faq-item.active .faq-question i {
+  transform: rotate(45deg);
+}
+
+/* Resaltar la pregunta cuando está activa */
+.faq-item.active .faq-question {
+  background: #4A69B2;
+}
+
+/* Contenedor de la respuesta */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  background: white;
+  padding: 0 20px;
+}
+
+/* Mostrar respuesta cuando está activa */
+.faq-item.active .faq-answer {
+  max-height: 500px; /* Ajusta según el contenido */
+  padding: 15px 20px;
+}
+
+/* Estilo del texto de la respuesta */
+.faq-answer p, .faq-answer ul, .faq-answer ol {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Listas dentro de la respuesta */
+.faq-answer ul, .faq-answer ol {
+  padding-left: 20px;
+}
+
+/* Negrita en listas */
+.faq-answer strong {
+  color: #4A69B2;
+}
+
+/* Contenedor de preguntas en 2 columnas */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas grandes */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: start; /* Asegura que los elementos no crezcan al abrir */
+}
+
+/* En pantallas pequeñas, una sola columna */
+@media (max-width: 768px) {
+  .faq-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* Estilos de cada pregunta */
+.faq-item {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilo del botón de la pregunta */
+.faq-question {
+  width: 100%;
+  background: #617ECA; /* Azul */
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+
+/* Cuando se abre la pregunta */
+.faq-item.active .faq-question {
+  background: #4A69B2; /* Azul más oscuro */
+  border-radius: 10px 10px 0 0;
+}
+
+/* Contenedor de la respuesta */
+.faq-answer {
+  background: white;
+  overflow: hidden;
+  max-height: 0;
+  padding: 0px 20px;
+  opacity: 0;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+/* Mostrar la respuesta cuando está activa */
+.faq-item.active .faq-answer {
+  max-height: 500px; /* Se expande dinámicamente */
+  padding: 15px 20px;
+  opacity: 1;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 10px 10px;
+}
+
+/* Texto dentro de la respuesta */
+.faq-answer p, .faq-answer ul, .faq-answer ol {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Listas dentro de la respuesta */
+.faq-answer ul, .faq-answer ol {
+  padding-left: 20px;
+}
+
+/* Icono de "+" */
+.faq-question i {
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotación del icono al expandir */
+.faq-item.active .faq-question i {
+  transform: rotate(45deg);
+}
+
+
