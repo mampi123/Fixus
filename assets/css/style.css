@@ -7045,7 +7045,7 @@ footer.centered .copyright {
   line-height: 1,8 !important; /* Ajusta el interlineado */
   text-align: center;
   margin: 20px 0;
-  padding: 0 10px;
+  padding: 10px;
   overflow-y: auto;
   flex-grow: 1;
   max-height: calc(100% - 100px);
@@ -7318,7 +7318,7 @@ footer.centered .copyright {
 .member-card-back {
   background: #617ECA;
   transform: rotateY(180deg);
-  padding: px;
+  padding: -1px;
   color: white;
   box-sizing: border-box;
 }
