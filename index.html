@@ -25,6 +25,8 @@
     <link href="assets/css/bootsnav.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css?v=1">
+
 
     <!-- ========== End Stylesheet ========== -->
 
@@ -369,24 +371,7 @@
     </div>
 
     <!-- Script de inicialización para Owl Carousel -->
-    <script>
-        $(document).ready(function () {
-            $(".clientes-carousel").owlCarousel({
-                loop: true,             // Hace que el carrusel sea infinito
-                margin: 30,             // Espaciado entre los logos
-                autoplay: true,         // Activa el autoplay
-                autoplayTimeout: 3000,  // Tiempo entre cambios de logo (3s)
-                autoplayHoverPause: true, // Pausa al pasar el mouse
-                nav: true,              // Agrega las flechas de navegación
-                navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
-                responsive: {
-                    0: { items: 2 },    // Muestra 2 logos en móviles
-                    600: { items: 3 },  // Muestra 3 logos en tablets
-                    1000: { items: 5 }  // Muestra 5 logos en pantallas grandes
-                }
-            });
-        });
-    </script>
+
 
     <!-- Start Services
     ============================================= -->
@@ -914,10 +899,16 @@ style="background-image: url(assets/img/7.jpg);">
     <script src="assets/js/YTPlayer.min.js"></script>
     <script src="assets/js/typed.js"></script>
     <script src="assets/js/jquery.ripples-min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <!-- 4) Tu script principal (main.js) -->
     <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Cargar jQuery primero -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Cargar Owl Carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- Ahora carga tu script principal -->
+<script src="assets/js/main.js"></script>
+
 </body>
 
 </html>

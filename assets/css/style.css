@@ -1865,18 +1865,7 @@ body, .banner-area,
   margin: 0;
 }
 
-.about-carousel .owl-nav .owl-prev, .about-carousel .owl-nav .owl-next {
-  background: transparent;
-  height: 35px;
-  left: 0;
-  line-height: 35px;
-  margin-top: -17px;
-  padding: 0;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  width: 35px;
-}
+
 
 .about-carousel .owl-nav .owl-prev:hover, 
 .about-carousel .owl-nav .owl-next:hover {
@@ -2597,21 +2586,7 @@ span.large {
   margin: 0;
 }
 
-.pp-services-area .services-items .owl-nav .owl-prev, 
-.pp-services-area .services-items .owl-nav .owl-next {
-  background: transparent none repeat scroll 0 0;
-  color: #617eca;
-  font-size: 30px;
-  height: 40px;
-  left: -70px;
-  line-height: 40px;
-  margin-top: -20px;
-  padding: 0;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  width: 40px;
-}
+
 
 .pp-services-area.color-crimson .services-items .owl-nav .owl-prev, 
 .pp-services-area.color-crimson .services-items .owl-nav .owl-next {
@@ -2625,7 +2600,7 @@ span.large {
 
 .pp-services-area .services-items .owl-nav .owl-next {
   left: auto;
-  right: -70px;
+  right: -50px;
 }
 
 .pp-services-area .services-items .item {
@@ -8006,3 +7981,51 @@ footer.centered .copyright {
   border: 2px solid red;
 }
 
+/* Asegura que las flechas no se desplacen fuera del carrusel */
+.owl-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; /* Evita que interfieran con el contenido */
+}
+
+/* Ajusta el estilo de los botones */
+.owl-carousel .owl-nav button {
+  background: white; /* Fondo blanco */
+  border: 2px solid #4a69bd; /* Borde azul */
+  color: #4a69bd; /* Color del icono */
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%; /* Bordes redondeados */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto; /* Permitir hacer clic */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Cambio de color al pasar el mouse */
+.owl-carousel .owl-nav button:hover {
+  background: #4a69bd;
+  color: white;
+}
+
+.owl-carousel .owl-prev {
+  position: absolute !important;
+  left: -50px !important;
+}
+
+.owl-carousel .owl-next {
+  position: absolute;
+  right: -50px;
+}
+
+/* Ocultar los puntos de navegación de Owl Carousel */
+.owl-dots {
+  display: none !important;
+}

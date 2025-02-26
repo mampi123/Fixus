@@ -776,5 +776,20 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-
+        $(document).ready(function () {
+            $(".clientes-carousel").owlCarousel({
+                loop: true,             // Hace que el carrusel sea infinito
+                margin: 30,             // Espaciado entre los logos
+                autoplay: true,         // Activa el autoplay
+                autoplayTimeout: 3000,  // Tiempo entre cambios de logo (3s)
+                autoplayHoverPause: true, // Pausa al pasar el mouse
+                nav: true,              // Agrega las flechas de navegación
+                navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+                responsive: {
+                    0: { items: 2 },    // Muestra 2 logos en móviles
+                    600: { items: 3 },  // Muestra 3 logos en tablets
+                    1000: { items: 5 }  // Muestra 5 logos en pantallas grandes
+                }
+            });
+        });
         
