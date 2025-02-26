@@ -754,5 +754,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
         });
-        
+
+$(document).ready(function() {
+    $("#contact-form").on("submit", function(event) {
+        event.preventDefault(); // Evita la recarga de la página
+
+        var formData = $(this).serialize(); // Serializa los datos del formulario
+
+        $.ajax({
+            type: "POST",
+            url: $(this).attr("action"),
+            data: formData,
+            success: function(response) {
+                $("#response-message").html(response); // Muestra la respuesta en la misma página
+                $("#contact-form")[0].reset(); // Limpia el formulario después de enviarlo
+            },
+            error: function() {
+                $("#response-message").html("<div class='alert alert-error'>❌ Error al enviar el formulario. Inténtalo nuevamente.</div>");
+            }
+        });
+    });
+});
+
+
+
         

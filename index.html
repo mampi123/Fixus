@@ -684,7 +684,7 @@ style="background-image: url(assets/img/7.jpg);">
             <h3>Solicita tu asesoría gratuita</h3>
             <h2>Fixus se pondrá en contacto contigo para brindarte orientación personalizada.</h2>
             <div class="subscribe">
-                <form action="assets/mail/contact.php" method="POST" class="d-flex flex-column align-items-center">
+                <form id="contact-form" action="assets/mail/contact.php" method="POST" class="d-flex flex-column align-items-center">
                     <div class="input-group stylish-input-group mb-4">
                         <input type="text" placeholder="Ingresá tu WhatsApp o email" class="form-control" name="contacto" required>
                     </div>
@@ -913,34 +913,10 @@ style="background-image: url(assets/img/7.jpg);">
     <script src="assets/js/YTPlayer.min.js"></script>
     <script src="assets/js/typed.js"></script>
     <script src="assets/js/jquery.ripples-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- 4) Tu script principal (main.js) -->
     <script src="assets/js/main.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
-    $("#contact-form").submit(function(event) {
-        event.preventDefault(); // Evita que la página se recargue
-
-        var formData = $(this).serialize(); // Obtiene los datos del formulario
-
-        $.ajax({
-            type: "POST",
-            url: $(this).attr("action"),
-            data: formData,
-            success: function(response) {
-                $("#response-message").html(response); // Muestra el mensaje en la misma página
-                $("#contact-form")[0].reset(); // Limpia el formulario después del envío
-            },
-            error: function() {
-                $("#response-message").html("<div class='alert alert-error'>❌ Ocurrió un error. Inténtalo nuevamente.</div>");
-            }
-        });
-    });
-});
-</script>
-
 </body>
 
 </html>
