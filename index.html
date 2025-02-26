@@ -697,6 +697,8 @@ style="background-image: url(assets/img/7.jpg);">
                         </button>
                     </div>
                 </form>
+                <!-- Espacio donde se mostrará el mensaje -->
+                <div id="response-message"></div>
             </div>
         </div>
     </div>
@@ -914,6 +916,30 @@ style="background-image: url(assets/img/7.jpg);">
 
     <!-- 4) Tu script principal (main.js) -->
     <script src="assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#contact-form").submit(function(event) {
+        event.preventDefault(); // Evita que la página se recargue
+
+        var formData = $(this).serialize(); // Obtiene los datos del formulario
+
+        $.ajax({
+            type: "POST",
+            url: $(this).attr("action"),
+            data: formData,
+            success: function(response) {
+                $("#response-message").html(response); // Muestra el mensaje en la misma página
+                $("#contact-form")[0].reset(); // Limpia el formulario después del envío
+            },
+            error: function() {
+                $("#response-message").html("<div class='alert alert-error'>❌ Ocurrió un error. Inténtalo nuevamente.</div>");
+            }
+        });
+    });
+});
+</script>
 
 </body>
 
