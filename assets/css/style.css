@@ -7989,18 +7989,20 @@ footer.centered .copyright {
   border-radius: 8px; /* Bordes redondeados */
   width: 80%; /* Ancho ajustado */
   margin: 20px auto; /* Centrado */
+  display: block; /* Asegura que se muestre */
 }
 
-/* Estilo para el mensaje de éxito */
+/* Mensaje de éxito */
 .alert-success {
-  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco */
   color: green; /* Texto verde */
   border: 2px solid green;
 }
 
-/* Estilo para el mensaje de error */
+/* Mensaje de error */
 .alert-error {
-  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco */
   color: red; /* Texto rojo */
   border: 2px solid red;
 }
+
