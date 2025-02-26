@@ -26,8 +26,8 @@ $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 $headers .= "Content-Transfer-Encoding: quoted-printable\r\n";
 
 if (mail($address, $e_subject, $e_body, $headers)) {
-    die("<div id='response-message' class='alert alert-success'>✅ Correo enviado correctamente. Gracias por contactarnos.</div>");
+    die("<div id='response-message' class='alert-success'>✅ Correo enviado correctamente. Gracias por contactarnos.</div>");
 } else {
-    die("<div id='response-message' class='alert alert-error'>❌ Error al enviar el correo. Por favor, intenta nuevamente.</div>");
+    die("<div id='response-message' class='alert-error'>❌ Error al enviar el correo. Por favor, intenta nuevamente.</div>");
 }
 ?>
