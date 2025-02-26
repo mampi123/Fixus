@@ -13,29 +13,29 @@ if ($contacto == '') {
     exit();
 }
 
-// Enviar correo
-$address = "mampelmartina@gmail.com";
-$e_subject = 'Nuevo Contacto - Fixus';
+// Configuración del correo
+$address = "mampelmartina@gmail.com"; // Correo donde quieres recibir los mensajes
+$e_subject = "Nuevo Contacto - Fixus";
 
-$e_body  = "Ha recibido un nuevo contacto desde su sitio web." . PHP_EOL . PHP_EOL;
-$e_body .= "Contacto: $contacto" . PHP_EOL;
-$e_body .= "CUIT / Razón Social: $cuit" . PHP_EOL;
-$e_body .= "------------------------" . PHP_EOL;
-$msg = wordwrap($e_body, 70);
+$e_body  = "Ha recibido un nuevo contacto desde su sitio web.\n\n";
+$e_body .= "📞 Contacto: $contacto\n";
+$e_body .= "📌 CUIT / Razón Social: $cuit\n";
+$e_body .= "------------------------";
 
-$headers = "From: no-reply@fixus.com" . PHP_EOL;
-$headers .= "Reply-To: no-reply@fixus.com" . PHP_EOL;
-$headers .= "MIME-Version: 1.0" . PHP_EOL;
-$headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
-$headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
+$headers = "From: no-reply@goldenrod-pony-702753.hostingersite.com\r\n";
+$headers .= "Reply-To: $contacto\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+$headers .= "Content-Transfer-Encoding: quoted-printable\r\n";
 
-if (mail($address, $e_subject, $msg, $headers)) {
+// Enviar el correo
+if (mail($address, $e_subject, $e_body, $headers)) {
     echo "<div class='alert alert-success'>";
-    echo "<h3>Correo enviado correctamente.</h3>";
+    echo "<h3>✅ Correo enviado correctamente.</h3>";
     echo "<p>Gracias, su mensaje ha sido enviado exitosamente.</p>";
     echo "</div>";
 } else {
-    echo '<div class="alert alert-error">Error al enviar el correo. Por favor, inténtelo nuevamente más tarde.</div>';
+    echo "<div class='alert alert-error'>❌ Error al enviar el correo. Por favor, inténtelo nuevamente más tarde.</div>";
     exit();
 }
 ?>
