@@ -792,4 +792,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         });
+
+$(document).ready(function() {
+    $(".timer").each(function() {
+        $(this).css({
+            "font-size": "2rem !important",
+            "font-weight": "bold !important",
+            "color": "#000 !important",
+            "display": "inline-block !important"
+        });
+    });
+
+    $(".timer").counterUp({
+        delay: 10, // Velocidad de la animación (más bajo = más rápido)
+        time: 2000 // Tiempo total de la animación en milisegundos (2 segundos)
+    });
+});
+
         
