@@ -754,59 +754,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
         });
-
-        $(document).ready(function() {
-            $("#contact-form").on("submit", function(event) {
-                event.preventDefault(); // Evita la recarga de la página
         
-                var formData = $(this).serialize(); // Serializa los datos del formulario
-        
-                $.ajax({
-                    type: "POST",
-                    url: $(this).attr("action"),
-                    data: formData,
-                    success: function(response) {
-                        $("#response-message").html(response); // Muestra la respuesta en la misma página
-                        $("#contact-form")[0].reset(); // Limpia el formulario después de enviarlo
-                    },
-                    error: function() {
-                        $("#response-message").html("<div class='alert alert-error'>❌ Error al enviar el formulario. Inténtalo nuevamente.</div>");
-                    }
-                });
-            });
-        });
-
-        $(document).ready(function () {
-            $(".clientes-carousel").owlCarousel({
-                loop: true,             // Hace que el carrusel sea infinito
-                margin: 30,             // Espaciado entre los logos
-                autoplay: true,         // Activa el autoplay
-                autoplayTimeout: 3000,  // Tiempo entre cambios de logo (3s)
-                autoplayHoverPause: true, // Pausa al pasar el mouse
-                nav: true,              // Agrega las flechas de navegación
-                navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
-                responsive: {
-                    0: { items: 2 },    // Muestra 2 logos en móviles
-                    600: { items: 3 },  // Muestra 3 logos en tablets
-                    1000: { items: 5 }  // Muestra 5 logos en pantallas grandes
-                }
-            });
-        });
-
-$(document).ready(function() {
-    $(".timer").each(function() {
-        $(this).css({
-            "font-size": "2rem !important",
-            "font-weight": "bold !important",
-            "color": "#000 !important",
-            "display": "inline-block !important"
-        });
-    });
-
-    $(".timer").counterUp({
-        delay: 10, // Velocidad de la animación (más bajo = más rápido)
-        time: 2000 // Tiempo total de la animación en milisegundos (2 segundos)
-    });
-});
-
         

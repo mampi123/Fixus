@@ -25,9 +25,6 @@
     <link href="assets/css/bootsnav.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/style.css?v=1">
-
-
     <!-- ========== End Stylesheet ========== -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -324,7 +321,7 @@
                                 <i class="fa-solid fa-trophy"></i>
                                 <div class="stat-number">
                                     <span class="large">+</span>
-                                    <span class="timer" data-to="15" data-speed="4000">15</span>
+                                    <span class="timer" data-to="15" data-speed="4000">25</span>
                                 </div>
                                 <span class="medium">Años de Experiencia</span>
                             </div>
@@ -335,44 +332,7 @@
         </div>
     </div>
 
-    <!-- Sección de Clientes -->
-    <div id="clientes" class="clientes-area default-padding" style="background: white;">
-        <div class="container">
-            <div class="row">
-                <div class="site-heading text-center">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2>NUESTROS <span>CLIENTES</span></h2>
-                        <p>Algunas de las empresas que han confiado en nosotros.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="clientes-carousel owl-carousel owl-theme">
-                        <div class="item">
-                            <img src="assets/img/logo1.png" alt="Cliente 1">
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/logo2.png" alt="Cliente 2">
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/logo3.png" alt="Cliente 3">
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/logo4.png" alt="Cliente 4">
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/logo5.png" alt="Cliente 5">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Script de inicialización para Owl Carousel -->
-
-
+  
     <!-- Start Services
     ============================================= -->
     <div id="why" class="pp-services-area carousel-shadow default-padding bg-gray">
@@ -670,7 +630,7 @@ style="background-image: url(assets/img/7.jpg);">
             <h3>Solicita tu asesoría gratuita</h3>
             <h2>Fixus se pondrá en contacto contigo para brindarte orientación personalizada.</h2>
             <div class="subscribe">
-                <form id="contact-form" action="assets/mail/contact.php" method="POST" class="d-flex flex-column align-items-center">
+                <form action="assets/mail/contact.php" method="POST" class="d-flex flex-column align-items-center">
                     <div class="input-group stylish-input-group mb-4">
                         <input type="text" placeholder="Ingresá tu WhatsApp o email" class="form-control" name="contacto" required>
                     </div>
@@ -683,8 +643,6 @@ style="background-image: url(assets/img/7.jpg);">
                         </button>
                     </div>
                 </form>
-                <!-- Espacio donde se mostrará el mensaje -->
-                <div id="response-message"></div>
             </div>
         </div>
     </div>
@@ -877,37 +835,31 @@ style="background-image: url(assets/img/7.jpg);">
          Scripts al final
          ======================= -->
 
-   <!-- 1) jQuery (Siempre Primero) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 1) jQuery -->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
 
-<!-- 2) Bootstrap (si lo usas) -->
-<script src="assets/js/bootstrap.min.js"></script>
+    <!-- 2) Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
 
-<!-- 3) Librerías necesarias -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <!-- 3) Otras librerías -->
+    <script src="assets/js/equal-height.min.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/progress-bar.min.js"></script>
+    <script src="assets/js/modernizr.custom.13711.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/count-to.js"></script>
+    <script src="assets/js/bootsnav.js"></script>
+    <script src="assets/js/YTPlayer.min.js"></script>
+    <script src="assets/js/typed.js"></script>
+    <script src="assets/js/jquery.ripples-min.js"></script>
 
-<!-- 4) Otras librerías -->
-<script src="assets/js/equal-height.min.js"></script>
-<script src="assets/js/jquery.appear.js"></script>
-<script src="assets/js/jquery.easing.min.js"></script>
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/progress-bar.min.js"></script>
-<script src="assets/js/modernizr.custom.13711.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/isotope.pkgd.min.js"></script>
-<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-<script src="assets/js/count-to.js"></script>
-<script src="assets/js/bootsnav.js"></script>
-<script src="assets/js/YTPlayer.min.js"></script>
-<script src="assets/js/typed.js"></script>
-<script src="assets/js/jquery.ripples-min.js"></script>
-
-<!-- 5) Tu script principal (Debe ir al final) -->
-<script src="assets/js/main.js"></script>
-
-
+    <!-- 4) Tu script principal (main.js) -->
+    <script src="assets/js/main.js"></script>
 
 </body>
 
