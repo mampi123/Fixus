@@ -755,4 +755,149 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
         
-        
+        // Ejecutar inmediatamente para asegurarnos de que se cargue antes que cualquier otro script
+        (function() {
+            // Función para mostrar notificaciones
+            function showNotification(message, isSuccess) {
+                // Eliminar notificaciones anteriores
+                const existingNotifications = document.querySelectorAll('.notification');
+                existingNotifications.forEach(notification => {
+                    notification.remove();
+                });
+                
+                // Crear el elemento de notificación
+                const notification = document.createElement('div');
+                notification.className = `notification ${isSuccess ? 'success' : 'error'}`;
+                
+                // Icono según el tipo de mensaje
+                const icon = isSuccess 
+                    ? '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="notification-icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>'
+                    : '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="notification-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
+                
+                // Estructura del mensaje
+                notification.innerHTML = `
+                    ${icon}
+                    <span class="notification-message">${message || (isSuccess ? '✅ Correo enviado correctamente. Gracias por contactarnos.' : '❌ Error al enviar el correo. Por favor, intenta nuevamente.')}</span>
+                `;
+                
+                // Añadir al DOM
+                document.body.appendChild(notification);
+                
+                // Mostrar con animación
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 10);
+                
+                // Ocultar después de 5 segundos
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    notification.classList.add('hide');
+                    
+                    // Eliminar del DOM después de la animación
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 5000);
+            }
+
+            // Función para manejar el envío del formulario
+            function handleFormSubmit(form) {
+                // Crear FormData con los datos del formulario
+                const formData = new FormData(form);
+                
+                // Obtener el botón de envío
+                const submitButton = form.querySelector('button[type="submit"], input[type="submit"]');
+                const originalText = submitButton ? submitButton.innerHTML : '';
+                
+                // Mostrar indicador de carga
+                if (submitButton) {
+                    submitButton.innerHTML = '<span class="spinner spinning"></span> Enviando...';
+                    submitButton.disabled = true;
+                }
+                
+                // Obtener la URL de acción del formulario
+                const actionUrl = form.getAttribute('action') || 'contact-Er0HugLK6XyBZnBEGKhDuxl6GDfOlO.php';
+                
+                // Enviar los datos al archivo PHP
+                fetch(actionUrl, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // Restaurar el botón
+                    if (submitButton) {
+                        submitButton.innerHTML = originalText;
+                        submitButton.disabled = false;
+                    }
+                    
+                    // Extraer el mensaje del HTML devuelto
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, 'text/html');
+                    const messageElement = doc.getElementById('response-message');
+                    const message = messageElement ? messageElement.textContent : '';
+                    const isSuccess = data.includes('alert-success') || data.includes('Correo enviado correctamente');
+                    
+                    // Mostrar la notificación
+                    showNotification(message, isSuccess);
+                    
+                    // Limpiar el formulario si fue exitoso
+                    if (isSuccess) {
+                        form.reset();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    
+                    // Restaurar el botón
+                    if (submitButton) {
+                        submitButton.innerHTML = originalText;
+                        submitButton.disabled = false;
+                    }
+                    
+                    // Mostrar mensaje de error
+                    showNotification('❌ Error al enviar el correo. Por favor, intenta nuevamente.', false);
+                });
+            }
+
+            // Función para inicializar los manejadores de eventos
+            function initFormHandlers() {
+                // Buscar todos los formularios en la página
+                const forms = document.querySelectorAll('form');
+                
+                forms.forEach(form => {
+                    // Eliminar cualquier manejador de eventos existente
+                    const newForm = form.cloneNode(true);
+                    form.parentNode.replaceChild(newForm, form);
+                    
+                    // Añadir nuestro manejador de eventos
+                    newForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleFormSubmit(this);
+                        return false;
+                    }, true);
+                    
+                    // Modificar el atributo onsubmit para mayor seguridad
+                    newForm.setAttribute('onsubmit', 'return false;');
+                    
+                    // Eliminar el atributo target si existe
+                    if (newForm.hasAttribute('target')) {
+                        newForm.removeAttribute('target');
+                    }
+                });
+            }
+
+            // Inicializar cuando el DOM esté listo
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initFormHandlers);
+            } else {
+                initFormHandlers();
+            }
+
+            // También inicializar después de que la página se cargue completamente
+            window.addEventListener('load', initFormHandlers);
+            
+            // Reinicializar periódicamente para capturar formularios añadidos dinámicamente
+            setInterval(initFormHandlers, 2000);
+        })();
