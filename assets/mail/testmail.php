@@ -1,5 +1,5 @@
 <?php
-$to = "mampelmartina@gmail.com"; // Cambia por tu correo
+$to = "info@fixusconsultora.com"; // Cambia por tu correo
 $subject = "Prueba de PHP mail()";
 $message = "Hola, esto es una prueba para verificar si mail() funciona.";
 $headers = "From: no-reply@tudominio.com";

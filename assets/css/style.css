@@ -8055,3 +8055,18 @@ footer.centered .copyright {
 .notification.hide {
   animation: slideOut 0.3s ease-out forwards;
 }
+
+.carousel img {
+  width: 100px; /* Establece el tamaño que desees */
+  height: 100px; /* Establece la altura */
+  object-fit: contain; /* Mantiene la proporción */
+}
+
+.carousel {
+  display: flex;
+  justify-content: center; /* Centra las imágenes */
+  align-items: center; /* Alinea las imágenes verticalmente */
+}
+.carousel img {
+  margin: 10px; /* Espacio entre las imágenes */
+}

@@ -11,7 +11,7 @@ if ($cuit == '') {
     die("<div id='response-message' class='alert alert-error'>❌ Debe ingresar su CUIT o Razón Social.</div>");
 }
 
-$address = "mampelmartina@hotmail.com";
+$address = "info@fixusconsultora.com";
 $e_subject = "Nuevo Contacto - Fixus";
 
 $e_body  = "Ha recibido un nuevo contacto desde su sitio web.\n\n";
