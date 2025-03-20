@@ -5,10 +5,12 @@ $contacto = trim($_POST['contacto']);
 $cuit = trim($_POST['cuit']);
 
 if ($contacto == '') {
-    die("<div id='response-message' class='alert alert-error'>❌ Debe ingresar su WhatsApp o email.</div>");
+    echo json_encode(["status" => "error", "message" => "❌ Debe ingresar su WhatsApp o email."]);
+    exit;
 }
 if ($cuit == '') {
-    die("<div id='response-message' class='alert alert-error'>❌ Debe ingresar su CUIT o Razón Social.</div>");
+    echo json_encode(["status" => "error", "message" => "❌ Debe ingresar su CUIT o Razón Social."]);
+    exit;
 }
 
 $address = "info@fixusconsultora.com";
@@ -26,8 +28,8 @@ $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 $headers .= "Content-Transfer-Encoding: quoted-printable\r\n";
 
 if (mail($address, $e_subject, $e_body, $headers)) {
-    die("<div id='response-message' class='alert alert-success'>✅ Correo enviado correctamente. Gracias por contactarnos.</div>");
+    echo json_encode(["status" => "success", "message" => "✅ Correo enviado correctamente. Gracias por contactarnos."]);
 } else {
-    die("<div id='response-message' class='alert alert-error'>❌ Error al enviar el correo. Por favor, intenta nuevamente.</div>");
+    echo json_encode(["status" => "error", "message" => "❌ Error al enviar el correo. Por favor, intenta nuevamente."]);
 }
 ?>

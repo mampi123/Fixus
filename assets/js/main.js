@@ -901,3 +901,69 @@ document.addEventListener("DOMContentLoaded", function () {
             // Reinicializar periódicamente para capturar formularios añadidos dinámicamente
             setInterval(initFormHandlers, 2000);
         })();
+
+        $(document).ready(() => {
+            // Iconos SVG para los mensajes
+            const successIcon =
+              '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="message-icon"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>'
+          
+            const errorIcon =
+              '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="message-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>'
+          
+            // Cuando se envíe el formulario
+            $("#contact-form").submit(function (e) {
+              e.preventDefault() // Prevenir que el formulario se envíe de manera tradicional
+          
+              // Obtener los datos del formulario
+              var formData = $(this).serialize()
+          
+              // Cambiar el texto del botón y deshabilitarlo durante el envío
+              $("#submit-btn").text("Enviando...").prop("disabled", true)
+          
+              // Limpiar mensajes anteriores
+              $("#response-message").empty()
+          
+              // Realizar la solicitud AJAX
+              $.ajax({
+                type: "POST",
+                url: "process.php", // Ruta a tu archivo PHP
+                data: formData,
+                dataType: "json",
+                success: (response) => {
+                  // Mostrar el mensaje de respuesta en la página
+                  if (response.status === "success") {
+                    $("#response-message").html(
+                      `<div class="message message-success">
+                                      ${successIcon}
+                                      <div class="message-content">${response.message}</div>
+                                  </div>`,
+                    )
+          
+                    // Limpiar el formulario en caso de éxito
+                    $("#contact-form")[0].reset()
+                  } else {
+                    $("#response-message").html(
+                      `<div class="message message-error">
+                                      ${errorIcon}
+                                      <div class="message-content">${response.message}</div>
+                                  </div>`,
+                    )
+                  }
+                },
+                error: () => {
+                  $("#response-message").html(
+                    `<div class="message message-error">
+                                  ${errorIcon}
+                                  <div class="message-content">Ha ocurrido un error inesperado. Por favor, inténtelo nuevamente más tarde o utilice un método alternativo de contacto.</div>
+                              </div>`,
+                  )
+                },
+                complete: () => {
+                  // Restaurar el botón
+                  $("#submit-btn").text("Enviar").prop("disabled", false)
+                },
+              })
+            })
+          })
+          
+          

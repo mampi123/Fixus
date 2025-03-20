@@ -8070,3 +8070,66 @@ footer.centered .copyright {
 .carousel img {
   margin: 10px; /* Espacio entre las imágenes */
 }
+
+
+
+/* Estilos para los mensajes de respuesta */
+.message {
+  margin: 20px 0;
+  padding: 16px;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.message-icon {
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.message-content {
+  flex-grow: 1;
+}
+
+.message-success {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.message-success .message-icon {
+  color: #16a34a;
+}
+
+.message-success .message-content {
+  color: #166534;
+}
+
+.message-error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.message-error .message-icon {
+  color: #dc2626;
+}
+
+.message-error .message-content {
+  color: #991b1b;
+}
+
+/* Animación para los mensajes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message {
+  animation: fadeIn 0.3s ease-out;
+}
+
